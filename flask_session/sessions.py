@@ -310,7 +310,7 @@ class FileSystemSessionInterface(SessionInterface):
 
     def __init__(self, cache_dir, threshold, mode, key_prefix,
                  use_signer=False, permanent=True):
-        from cachelib.file import FileSystemCache
+        from flask_caching.backends.filesystem import FileSystemCache
         self.cache = FileSystemCache(cache_dir, threshold=threshold, mode=mode)
         self.key_prefix = key_prefix
         self.use_signer = use_signer
