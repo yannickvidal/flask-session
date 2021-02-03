@@ -170,7 +170,7 @@ class RedisSessionInterface(SessionInterface):
             session_id = session.sid
         response.set_cookie(app.session_cookie_name, session_id,
                             expires=expires, httponly=httponly,
-                            domain=domain, path=path, secure=secure)
+                            domain=domain, path=path, secure=secure, samesite='Lax')
 
 
 class MemcachedSessionInterface(SessionInterface):
@@ -287,7 +287,7 @@ class MemcachedSessionInterface(SessionInterface):
             session_id = session.sid
         response.set_cookie(app.session_cookie_name, session_id,
                             expires=expires, httponly=httponly,
-                            domain=domain, path=path, secure=secure)
+                            domain=domain, path=path, secure=secure, samesite='Lax')
 
 
 class FileSystemSessionInterface(SessionInterface):
@@ -359,7 +359,7 @@ class FileSystemSessionInterface(SessionInterface):
             session_id = session.sid
         response.set_cookie(app.session_cookie_name, session_id,
                             expires=expires, httponly=httponly,
-                            domain=domain, path=path, secure=secure)
+                            domain=domain, path=path, secure=secure, samesite='Lax')
 
 
 class MongoDBSessionInterface(SessionInterface):
@@ -446,7 +446,7 @@ class MongoDBSessionInterface(SessionInterface):
             session_id = session.sid
         response.set_cookie(app.session_cookie_name, session_id,
                             expires=expires, httponly=httponly,
-                            domain=domain, path=path, secure=secure)
+                            domain=domain, path=path, secure=secure, samesite='Lax')
 
 
 class SqlAlchemySessionInterface(SessionInterface):
@@ -560,4 +560,4 @@ class SqlAlchemySessionInterface(SessionInterface):
             session_id = session.sid
         response.set_cookie(app.session_cookie_name, session_id,
                             expires=expires, httponly=httponly,
-                            domain=domain, path=path, secure=secure)
+                            domain=domain, path=path, secure=secure, samesite='Lax')
